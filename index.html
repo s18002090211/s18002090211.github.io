@@ -1,8 +1,24 @@
-﻿<html>
+<html>
 <body>
-<h1>我叫洪凯旋.</h1>
-    <p>我的学号是<span id="studentnumber">18002090211</span></p>
+<h1>我叫<spen id="myname"></spen></h1>
+    <p>我的学号是<span id="mynumber"></span></p>
+    <button id="but">下一个</button><br>
     <img src="matrix.png"/>
-    <img id="logo" src="Koala.jpg"/>
+    <img id="logo" src="Koala.jpg" style="border-radius: 10px 20px 40px 00px">
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+    $(function(){
+        $.get("./data.json",function(result){
+            $("#myname").text(result.myname);
+            $("#mynumber").text(result.mynumber);
+        });
+    })
+    $("#but").click(function(){
+        $.get("./data1.json",function(result){
+            $("#myname").text(result.myname);
+            $("#mynumber").text(result.mynumber);
+        });
+    })
+    </script>
 </body>
 </html>
